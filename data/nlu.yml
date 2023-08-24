@@ -1,0 +1,162 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - fine
+    - great
+    - good
+    - not bad
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: gratitude
+  examples: |
+    - thanks
+    - thank you
+    - wow, thanks for your help
+    - thanks for the help
+    - thanks alot
+    - thank you so much 
+
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: open_websites
+  examples: |
+    - open google
+    - open amazon
+    - redirect to google website
+    - open myntra website
+    - open nyka
+
+- intent: get_weather
+  examples: |
+    - What's the weather like in [London](city)?
+    - Tell me the weather in [New York](city)
+    - How's the weather in [Paris](city) today?
+    - How's the weather in [Chennai](city) today?
+    - Tell me the weather in [Bangalore](city)
+    - What's the weather forecast for [Sydney](city)?
+    - Can you tell me about the weather in [Tokyo](city)?
+    - How cold is it in [Moscow](city) right now?
+    - Is it raining in [Hyderabad](city)?
+    - Give me the weather update for [Los Angeles](city).
+    - Tell me the temperature in [Berlin](city).
+    - What's the weather like in [Rome](city) today?
+    - How's the weather expected to be in [Singapore](city)?
+    - Describe the weather in [Dubai](city).
+    - Any updates on the weather conditions in [Shanghai](city)?
+
+- intent: ask_id_card_instructions
+  examples: |
+    - How can I apply for an ID card?
+    - Can you help me with applying for an ID card?
+    - I need instructions to get an ID card.
+
+- intent: ask_how_to_book_room
+  examples: |
+    - How can I book a meeting room?
+    - What's the process for reserving a workspace?
+    - Can you guide me on making room reservations?
+    - How to book a conference room?
+
+- intent: relocate
+  examples: |
+   - How to relocate my current working location?
+   - What's the process to change my work location?
+   - Can you help me with relocating my workspace?
+   - I need information on relocating my current location.
+   - How do I go about changing my work location?
+   - Tell me about the procedure to relocate my workplace.
+
+- intent: book_seat
+  examples: |
+   - How can I book a seat in the workplace?
+   - What's the process to reserve a seat?
+   - Can you help me with seat booking?
+   - I need information on reserving a workspace seat.
+   - How do I go about selecting and reserving a seat?
+

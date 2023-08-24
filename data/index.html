@@ -1,0 +1,36 @@
+
+</head>
+<body>
+    <style>
+        .rw-conversation-container .rw-header{background-color:hsl(263, 73%, 51%);}
+        .rw-conversation-container .rw-messages-container .rw-message .rw-client{background-color: hsl(263, 73%, 51%);}
+        .rw-launcher{background-color: hsl(263, 73%, 51%);}
+        .rw-conversation-container .rw-reply{background-color: hsl(263, 73%, 51%); border: 1px solid hsl(263, 73%, 51%);}
+    </style>
+    <script>!(function () {
+        let e = document.createElement("script"),
+          t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+          "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+          (e.async = !0),
+          (e.onload = () => {
+            window.WebChat.default(
+              {
+                customData: { language: "en" },
+                socketUrl: "http://localhost:5005/",
+                title: 'Rasabot',
+                subtitle: 'We\'re online to assist you!',
+                initPayload: '/greet',
+                profileAvatar: "https://img.icons8.com/fluency/344/chatbot.png",
+                showMessageDate: true,
+                inputTextFieldHint: "Type your message here..",
+            },
+                  null
+                );
+              }),
+              t.insertBefore(e, t.firstChild);
+          })();
+          localStorage.clear();
+          </script>
+    </body>
+</html> 

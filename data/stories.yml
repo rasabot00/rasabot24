@@ -1,0 +1,77 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: User opens a website
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: utter_help
+  - intent: open_websites
+  - action: action_open_website
+  - intent: gratitude
+  - action: utter_thanks
+  
+- story: Get weather
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_weather
+    entities:
+    - entity: city
+  - action: action_get_weather
+  - intent: gratitude
+  - action: utter_thanks
+
+- story: User asks for ID card instructions
+  steps:
+  - intent: ask_id_card_instructions
+  - action: action_id
+  - action: utter_apply_id_instructions
+
+- story: User asks for room booking instructions
+  steps:
+    - intent: ask_how_to_book_room
+    - action: action_booking_room
+    - action: utter_book_room_instructions
+
+- story: User asks for relocation
+  steps:
+    - intent: relocate
+    - action: action_relocate_location
+    - action: utter_relocation
+
+- story: User asks for seat booking
+  steps:
+    - intent: book_seat
+    - action: action_book_seat
+    - action: utter_seat_booking
+

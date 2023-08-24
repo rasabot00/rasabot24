@@ -1,0 +1,133 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - gratitude
+  - open_websites
+  - get_weather
+  - ask_id_card_instructions
+  - ask_how_to_book_room
+  - relocate
+  - book_seat
+
+entities:
+  - city
+
+slots:
+  city:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: city
+
+  asked_how_to_apply_id_card:
+    type: bool
+    influence_conversation: false
+    mappings:
+      - type: from_intent
+        intent: ask_id_card_instructions
+        value: true
+  
+  asked_how_to_book_room:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_intent
+        intent: ask_how_to_book_room
+        value: true
+
+
+actions:
+  - action_open_website
+  - action_get_weather
+  - utter_help
+  - utter_thanks
+  - action_id
+  - utter_apply_id_instructions
+  - action_booking_room
+  - utter_book_room_instructions
+  - action_book_seat
+  - action_relocate_location
+  - utter_relocation
+  - utter_seat_booking
+
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+    - text: "Hello there! How are you doing today?"
+    - text: "Hey! How's everything going with you?"
+    - text: "Hi! How's your day going?"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_help:
+    - text: "Great, How Can I help you?"
+    - text: "Great! How can I assist you today?"
+    - text: "Good to know! What can I help you with?"
+    - text: "Great! What can I do for you today?"
+    
+  utter_thanks:
+    - text: "Glad I could assist you. Have a fantastic day!"
+    - text: "You're welcome! If you have more questions, feel free to ask. Have a wonderful day!"
+    - text: "No problem at all! Remember, I'm here to help. Have an amazing day ahead!"
+  
+  utter_apply_id_instructions:
+    - text: |
+        Here are the steps to follow:
+
+        1. Click on 'Request Workplace Service/Support'.
+        2. Fill in the mandatory fields such as country, contact, and building.
+        3. Choose 'ID' under the category.
+        4. Select all 3 cards under the sub-category: SEZ, Display, and Wallet.
+        5. Fill in the floor number, seat number, and a short description as 'Request new card'.
+        6. Fill in the description field.
+        7. Click 'Add Attachments' and upload your photo with a white background.
+        8. Click 'Submit'.
+
+        You will receive an email confirming that a new case has been opened on the date and time with the respective FCR ID and a short description. You can mention your FCR number to the helpdesk to inquire about your IDs.
+
+  utter_book_room_instructions:
+    - text: |
+        Here are the few steps to follow:
+
+        1. Visit the portal and navigate to 'Check-in or Management Space Reservations'.
+        2. Click on 'Reserve Workspace' and select 'Create a Reservation'.
+        3. Choose the type of reservation, e.g., 'Ind Reserve Meeting Room'.
+        4. Select the date, time, location, and number of people.
+        5. Choose the room from the available list and proceed.
+        6. Enter the enterprise IDs of the members occupying the room.
+        7. Click 'Create Reservation'.
+        8. You'll receive a confirmation email, and if the booking is in 'Request' status, wait for the Local Workplace team's confirmation.
+        9. Once confirmed, you can check in by clicking 'Check In'.
+
+  utter_relocation:
+    - text: "Once you're on the page, Click on Transfer and fill in the mandatory fields and click submit button."
+  
+  utter_seat_booking:
+    - text: " On the page, select the facility floor and choose an available seat. Once selected, click on 'Reserve,' and your seat will be booked. You'll receive a confirmation email to your Outlook account about your seat booking."
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
